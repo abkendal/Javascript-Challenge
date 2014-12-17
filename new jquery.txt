@@ -1,0 +1,20 @@
+.parent()
+.parents()
+.children()
+.find()
+.sibling()
+.toggleClass()
+.next()
+.empty()			# Delete an elements contents and all its decendents
+.remove()			# Deletes the content of an element and the element itself
+.addClass()			# Add a class to an element
+.removeClass()		# Remove a class from an element
+.toggleClass()		# Add a class if it is not there and remove it if it's there
+.height()			# Change the height of an element
+.width()			# Change the width of an element
+.css('*element', '*value')		# General purpose css function
+.html()				# Get/set the contents of the first element of the selector it finds
+.val()				# Used to get the fale of form elements
+
+
+grab h1(cool articles), all of the children of article-list and 2 parent divs
