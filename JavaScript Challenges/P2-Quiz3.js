@@ -28,12 +28,12 @@ function totalBytes(results) {
 // and two console.log statements to help you test your code!
 
 psinsights = {
- "kind": "pagespeedonline#result",
- "id": "/speed/pagespeed",
- "responseCode": 200,
- "title": "PageSpeed Home",
- "score": 90,
- "pageStats": {
+  "kind": "pagespeedonline#result",
+  "id": "/speed/pagespeed",
+  "responseCode": 200,
+  "title": "PageSpeed Home",
+  "score": 90,
+  "pageStats": {
   "numberResources": 22,
   "numberHosts": 7,
   "totalRequestBytes": "2761",
@@ -46,7 +46,7 @@ psinsights = {
   "numberJsResources": 6,
   "numberCssResources": 2
  },
- "formattedResults": {
+  "formattedResults": {
   "locale": "en_US",
   "ruleResults": {
     "AvoidBadRequests": {
@@ -59,8 +59,8 @@ psinsights = {
       "urlBlocks": [
       {
         "header": {
-       "format": "Minifying the following JavaScript resources could reduce their size by $1 ($2% reduction).",
-       "args": [
+        "format": "Minifying the following JavaScript resources could reduce their size by $1 ($2% reduction).",
+        "args": [
         {
          "type": "BYTES",
          "value": "1.3KiB"
@@ -74,38 +74,38 @@ psinsights = {
         "urls": [
         {
           "result": {
-         "format": "Minifying $1 could save $2 ($3% reduction).",
-         "args": [
+          "format": "Minifying $1 could save $2 ($3% reduction).",
+          "args": [
           {
-           "type": "URL",
-           "value": "http://code.google.com/js/codesite_tail.pack.04102009.js"
+            "type": "URL",
+            "value": "http://code.google.com/js/codesite_tail.pack.04102009.js"
           },
           {
-           "type": "BYTES",
-           "value": "717B"
+            "type": "BYTES",
+            "value": "717B"
           },
           {
-           "type": "INT_LITERAL",
-           "value": "1"
+            "type": "INT_LITERAL",
+            "value": "1"
           }
          ]
         }
        },
        {
         "result": {
-         "format": "Minifying $1 could save $2 ($3% reduction).",
-         "args": [
+          "format": "Minifying $1 could save $2 ($3% reduction).",
+          "args": [
           {
-           "type": "URL",
-           "value": "http://www.gmodules.com/ig/proxy?url\u003dhttp%3A%2F%2Fjqueryjs.googlecode.com%2Ffiles%2Fjquery-1.2.6.min.js"
+            "type": "URL",
+            "value": "http://www.gmodules.com/ig/proxy?url\u003dhttp%3A%2F%2Fjqueryjs.googlecode.com%2Ffiles%2Fjquery-1.2.6.min.js"
           },
           {
-           "type": "BYTES",
-           "value": "258B"
+            "type": "BYTES",
+            "value": "258B"
           },
           {
-           "type": "INT_LITERAL",
-           "value": "0"
+            "type": "INT_LITERAL",
+            "value": "0"
           }
          ]
         }
