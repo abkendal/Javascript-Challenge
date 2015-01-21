@@ -1,39 +1,46 @@
 // Iterate through the localizedRuleNames in ruleResults and 
 // return an array of their strings.
+    var out = [];
+    var num = 0;
 function ruleList(results) {
-    var rules = [];
-    for (x in results.formattedResults.ruleResults) {
-        //console.log(results.formattedResults.ruleResults[x].localizedRuleName);
-        rules[x] = results.formattedResults.ruleResults[x].localizedRuleName.toString();
-        console.log(rules[x]);
-        console.log(rules);
-    };
-    return rules;
+
+    for (y in results.formattedResults.ruleResults) {
+        //temp = results ['formattedResults']['ruleResults'][y]['localizedRuleName'];
+        //console.log(temp);
+        //out[y] = temp;
+        //out[y] = results ['formattedResults']['ruleResults'][y]['localizedRuleName'];
+        out[num] = results.formattedResults.ruleResults[y].localizedRuleName;
+        num = num+1;
+        //console.log(out[num]);
+        //console.log(out);
+    };       
+    return out;
 }
 
 // Iterate through pageStats in the psiResults object and 
 // return the total number of bytes to load the website.
 function totalBytes(results) {
-    var totalBytes = 0;
-    for (y in results.pageStats) {
-        if (typeof(results.pageStats[y]) === "string") {
-            var temp = parseInt(results.pageStats[y]);
-            totalBytes = totalBytes + temp;
-        };
-    };
-    return totalBytes;
+    var n = 0;
+    for (x in results.pageStats) {
+        if (x.indexOf("Bytes") > -1) {
+            var temp = Number(results.pageStats[x]);
+            n = n + temp;
+        }
+    }
+    return(n);
 }
+
 
 // Below, you'll find a sample PS Insights JSON
 // and two console.log statements to help you test your code!
 
 psinsights = {
-  "kind": "pagespeedonline#result",
-  "id": "/speed/pagespeed",
-  "responseCode": 200,
-  "title": "PageSpeed Home",
-  "score": 90,
-  "pageStats": {
+ "kind": "pagespeedonline#result",
+ "id": "/speed/pagespeed",
+ "responseCode": 200,
+ "title": "PageSpeed Home",
+ "score": 90,
+ "pageStats": {
   "numberResources": 22,
   "numberHosts": 7,
   "totalRequestBytes": "2761",
@@ -46,7 +53,7 @@ psinsights = {
   "numberJsResources": 6,
   "numberCssResources": 2
  },
-  "formattedResults": {
+ "formattedResults": {
   "locale": "en_US",
   "ruleResults": {
     "AvoidBadRequests": {
@@ -59,8 +66,8 @@ psinsights = {
       "urlBlocks": [
       {
         "header": {
-        "format": "Minifying the following JavaScript resources could reduce their size by $1 ($2% reduction).",
-        "args": [
+       "format": "Minifying the following JavaScript resources could reduce their size by $1 ($2% reduction).",
+       "args": [
         {
          "type": "BYTES",
          "value": "1.3KiB"
@@ -74,38 +81,38 @@ psinsights = {
         "urls": [
         {
           "result": {
-          "format": "Minifying $1 could save $2 ($3% reduction).",
-          "args": [
+         "format": "Minifying $1 could save $2 ($3% reduction).",
+         "args": [
           {
-            "type": "URL",
-            "value": "http://code.google.com/js/codesite_tail.pack.04102009.js"
+           "type": "URL",
+           "value": "http://code.google.com/js/codesite_tail.pack.04102009.js"
           },
           {
-            "type": "BYTES",
-            "value": "717B"
+           "type": "BYTES",
+           "value": "717B"
           },
           {
-            "type": "INT_LITERAL",
-            "value": "1"
+           "type": "INT_LITERAL",
+           "value": "1"
           }
          ]
         }
        },
        {
         "result": {
-          "format": "Minifying $1 could save $2 ($3% reduction).",
-          "args": [
+         "format": "Minifying $1 could save $2 ($3% reduction).",
+         "args": [
           {
-            "type": "URL",
-            "value": "http://www.gmodules.com/ig/proxy?url\u003dhttp%3A%2F%2Fjqueryjs.googlecode.com%2Ffiles%2Fjquery-1.2.6.min.js"
+           "type": "URL",
+           "value": "http://www.gmodules.com/ig/proxy?url\u003dhttp%3A%2F%2Fjqueryjs.googlecode.com%2Ffiles%2Fjquery-1.2.6.min.js"
           },
           {
-            "type": "BYTES",
-            "value": "258B"
+           "type": "BYTES",
+           "value": "258B"
           },
           {
-            "type": "INT_LITERAL",
-            "value": "0"
+           "type": "INT_LITERAL",
+           "value": "0"
           }
          ]
         }
